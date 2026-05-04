@@ -77,7 +77,7 @@ flowchart TD
     linkStyle default stroke:#5E3D26,stroke-width:2px
 ```
 
-# Origin: Verification Frustration Building Konjugieren
+# Origin Story
 
 I built `ios-build-verify` because of verification frustration I experienced developing [Konjugieren](https://apps.apple.com/us/app/konjugieren/id6758258747) ([source](https://github.com/vermont42/Konjugieren/)). The agent could write code; the agent could run `xcodebuild`. But anything past compilation (does this screen render? does that picker actually update? did the bug repro?) required me to launch a simulator, exercise the UI, screenshot, and feed the result back. I was the entire feedback loop in the implementation middle. The skill is what I wish I had then.
 

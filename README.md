@@ -122,7 +122,7 @@ To install for your personal use in Claude Code:
    ```
 2. Install the skill:
    ```
-   /plugin install ios-build-verify
+   /plugin install ios-build-verify@ios-build-verify
    ```
 
 ## Project-Wide Usage

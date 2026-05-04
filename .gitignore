@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Claude Code local overrides
+.claude/settings.local.json
+
+# Logs and diagnostic output
+*.log
+
+# Temporary and backup files
+*.tmp
+*.bak
+*.orig

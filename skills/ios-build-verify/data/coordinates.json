@@ -1,0 +1,20 @@
+{
+  "iPhone 17": {
+    "screen_width_pt": 402,
+    "tabs": [
+      { "x": 115, "y": 822 },
+      { "x": 201, "y": 822 },
+      { "x": 287, "y": 822 }
+    ],
+    "floating_tab_pill_y_band": [782, 862]
+  },
+  "iPhone 17 Pro": {
+    "screen_width_pt": 402,
+    "tabs": [
+      { "x": 115, "y": 822 },
+      { "x": 201, "y": 822 },
+      { "x": 287, "y": 822 }
+    ],
+    "floating_tab_pill_y_band": [782, 862]
+  }
+}

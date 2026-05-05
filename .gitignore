@@ -24,3 +24,6 @@
 *.tmp
 *.bak
 *.orig
+
+# Local handoff prompts and scratch notes (not part of the published skill)
+prompts/

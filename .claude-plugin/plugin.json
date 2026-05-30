@@ -1,7 +1,7 @@
 {
   "name": "ios-build-verify",
   "description": "Build and verify SwiftUI iOS apps. Drives xcodebuild and xcbeautify for builds and AXe for UI verification. Operations are in named scripts and use per-project config.",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "author": {
     "name": "Josh Adams"
   }

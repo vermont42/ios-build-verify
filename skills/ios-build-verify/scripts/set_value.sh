@@ -11,12 +11,15 @@ ID="$1"; TEXT="$2"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 source "$SCRIPT_DIR/_resolve_udid.sh"
+source "$SCRIPT_DIR/_type_text.sh"
 
 "$SCRIPT_DIR/read_value.sh" "$ID" >/dev/null
 "$SCRIPT_DIR/tap_id.sh" "$ID" >/dev/null
 
-axe key-combo --modifiers 227 --key 4 --udid "$UDID" >/dev/null
-axe type "$TEXT" --udid "$UDID" >/dev/null
+axe key-combo --modifiers 227 --key 4 --udid "$UDID" >/dev/null  # Cmd+A: select all
+# Routes ASCII through `axe type`, non-ASCII (accented/Unicode) through the
+# simctl-pbcopy + Cmd+V pasteboard workaround. See _type_text.sh.
+type_into_focused_field "$UDID" "$TEXT"
 
 # Read-back-and-compare: HID dispatch (key-combo + type) returns success even
 # when the widget's bound state didn't change — Toggles inside Form inside

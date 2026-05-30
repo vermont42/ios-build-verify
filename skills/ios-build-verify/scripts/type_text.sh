@@ -82,6 +82,7 @@ case "$MODE" in
     Y="${SELECTOR#*,}"
 
     source "$SCRIPT_DIR/_resolve_udid.sh"
+    source "$SCRIPT_DIR/_type_text.sh"
 
     TAP_ARGS=("$X" "$Y")
     [[ -n "$VERIFY_TARGET" ]] && TAP_ARGS+=("--verify-target" "$VERIFY_TARGET")
@@ -90,7 +91,9 @@ case "$MODE" in
 
     sleep 0.2  # let the keyboard settle before sending key events
     axe key-combo --modifiers 227 --key 4 --udid "$UDID" >/dev/null  # Cmd+A: select all
-    axe type "$TEXT" --udid "$UDID" >/dev/null
+    # Routes ASCII through `axe type`, non-ASCII (accented/Unicode) through the
+    # simctl-pbcopy + Cmd+V pasteboard workaround. See _type_text.sh.
+    type_into_focused_field "$UDID" "$TEXT"
     echo "typed: '$TEXT' at ($X,$Y) — no read-back verification (assert post-state separately if needed)"
     ;;
 esac

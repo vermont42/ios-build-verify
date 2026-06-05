@@ -353,8 +353,12 @@ operations. Both scripts pipe \`xcodebuild\` through \`xcbeautify\` for concise
 output and tee raw output to \`build.log\` as a fallback.
 
 \`\`\`bash
-# Build the app
+# Build the app — this is the COMPILE step
 $EMIT_SCRIPTS_DIR/build_app.sh
+
+# Install the last build + launch on the simulator. Does NOT compile.
+# After editing source, run build_app.sh first: build_app.sh && launch_app.sh
+$EMIT_SCRIPTS_DIR/launch_app.sh
 
 # Run all tests
 $EMIT_SCRIPTS_DIR/run_tests.sh

@@ -9,7 +9,7 @@ The skill bundles two halves of the iOS agentic-coding loop. The build half pipe
 - `skills/ios-build-verify/SKILL.md` — canonical reference for every operation, exit code, and worked example. Authoritative (~107K); consult it before inferring semantics from script filenames.
 - `skills/ios-build-verify/scripts/` — bash entrypoints for every operation. Scripts whose names start with `_` (e.g., `_resolve_udid.sh`, `_check_pill_overlap.sh`, `_classify_present_ids.sh`) are sourced helpers, not standalone commands; reach them through the public scripts that source them.
 - `skills/ios-build-verify/data/coordinates.json` — per-project tab-pill coordinate data, edited per project.
-- `.claude-plugin/plugin.json` — plugin manifest. Bump `version` on release.
+- `.claude-plugin/plugin.json` — plugin manifest. Bump `version` on release. NOTE: after `claude plugin update`, the `gitCommitSha` recorded for this plugin in `~/.claude/plugins/installed_plugins.json` is unreliable — it retains a prior install-time value (and duplicate same-version entries can record divergent SHAs). To answer "is my cache on the latest commit?", trust `git -C ~/.claude/plugins/marketplaces/ios-build-verify rev-parse HEAD`, not the recorded `gitCommitSha`. Upstream bug anthropics/claude-code#56740 (closed-as-stale without triage); confirmed still reproducing on 0.3.1.
 - `.claude-plugin/marketplace.json` — marketplace listing.
 - `backlog/` — validation-session writeups; not loaded by the skill at runtime.
 
